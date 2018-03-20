@@ -1,4 +1,4 @@
-#Chapter 2
+# Chapter 2
 
 ### Strict Mode
 Use it! Tightens rules to make code safer and more optimizable.
