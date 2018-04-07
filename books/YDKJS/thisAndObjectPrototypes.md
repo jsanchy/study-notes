@@ -314,4 +314,46 @@ Mixin pattern _sort of_ emulates classes, but usually leads to brittle syntax li
 
 # Chapter 5
 
+## `[[Prototype]]`
 
+### `Object.prototype`
+
+Is the top-end of every _normal_ `[[Prototype]]` chain.
+
+### Setting & Shadowing Properties
+
+Assignment of a property does NOT always result in shadowing if the property already exists higher on the `[[Prototype]]` chain.
+
+Shadowing usually more complicated and nuanced than it's worth.
+
+Look at example of subtle implicit shadowing.
+
+## "Class"
+
+### Mechanics
+
+#### "Constructor" Redux
+
+`.constructor` is extremely unreiable, and an unsafe reference to rely upon in your code.
+
+## "(Prototypal) Inerhitance"
+
+ES6 adds `Object.setPrototypeOf(...)` helper utility to modify the linkage of an existing object.
+
+### Inspecting "Class" Relationships
+
+`instanceof`, `Object.prototype.isPrototypeOf()`, `Object.getPrototypeOf()`, `Object.prototype.__proto__`
+
+Generally, should not change the `[[Prototype]]` of an existing object.
+
+## Object Links
+
+### `Create()`ing Links
+
+`Object.create(...)` give power of the `[[Prototype]]` mechanism without unnecessary complication of `new` functions acting as classes and constructor calls, confusing `.prototype` and `.constructor` references, etc.
+
+**Note:** `Object.create(null)` used for storing data in a purely flat storage with no possible surprise effects from delegated properties/functions on `[[Prototype]]` chain, because it has none. Often called "dictionaries".
+
+### Links As Fallbacks?
+
+Less surprising/confusing if it's an internal implementation detail than if it's plainly exposed in your API design. Use delegation design pattern?
