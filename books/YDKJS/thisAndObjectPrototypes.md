@@ -287,3 +287,31 @@ ES6 adds `for...of` loop that allows iteration over _values_ instead of properti
 `for...of` asks for `@@iterator`, which arrays have built-in.
 
 Can iterate over other data structures aside from arrays, like objects, by creating a custom @@iterator.
+
+
+# Chapter 4
+
+## Mixins
+
+### Explicit Mixins
+
+#### "Polymorphism" Revisited
+
+Explicit pseudo-polymorphism should be avoided whenever possible because complex and harder to maintain/read.
+
+#### Mixing Copies
+
+Even manually copying functions (mixins) from one object to another does emulate the real duplication from class to instance in class-oriented languages. It's just a duplicated reference.
+
+## Review (TL;DR)
+
+Classes mean copies.
+
+JS does not automatically create copies as classes imply.
+
+Mixin pattern _sort of_ emulates classes, but usually leads to brittle syntax like expilcit pseudo-polymorphism (`OtherObj.methodName.call(this, ...)`), often leading to harder to understand/maintain code.
+
+
+# Chapter 5
+
+
